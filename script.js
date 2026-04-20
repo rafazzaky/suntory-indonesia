@@ -4,6 +4,8 @@ function setActive(el) {
     .querySelectorAll(".nav-links a")
     .forEach((a) => a.classList.remove("active"));
   el.classList.add("active");
+
+  document.getElementById("nav-links").classList.remove("show-menu");
 }
 
 /* Products */
@@ -41,24 +43,27 @@ function prevProduct() {
 /* News */
 const newsData = [
   {
-    icon: "🏆",
-    bg: "linear-gradient(135deg,#1b5e20,#388e3c)",
+    image: "images/news_1.png",
     title: "Kejar BRAND'S 2024",
     body: "Terimakasih Branders yang sudah ikutan Kejar BRAND'S dari September 2024 sampai Januari 2025 kemarin. Proses pengiriman hadiah akan dilakukan segera ya! Program Kejar BRAND'S 2024 merupakan program loyalitas eksklusif kami untuk menghargai pelanggan setia yang telah mengkonsumsi produk BRAND'S secara rutin. Hadiah-hadiah menarik seperti Huawei Fit 3, Moshi Premium Tumbler, Bateus TWS Mini Earbuds, Portable Treadmill, Philips Air Purifier, dan Shopping Voucher Sodexo/MAP telah disiapkan untuk para pemenang.",
   },
   {
-    icon: "⭐",
-    bg: "linear-gradient(135deg,#4caf50,#2e7d32)",
+    image: "images/news_2.png",
     title: "Tahun Baru, BRAND'S punya Brand Ambassador baru!",
     body: "Tahun baru, BRAND'S punya wajah baru! Selamat bergabung Hiroaki Kato & Arina Ephipania sebagai Brand Ambassador resmi Suntory BRAND'S Indonesia 2025! Siapa Branders di sini yang fans mereka? Nantikan keseruan BRAND'S dengan Brand Ambassador di tahun ini ya!",
   },
 ];
 function openNews(idx) {
   const n = newsData[idx];
-  document.getElementById("news-detail-icon").textContent = n.icon;
-  document.getElementById("news-detail-img").style.background = n.bg;
+
+  // Memasukkan data ke elemen yang BENAR-BENAR ADA di HTML baru
+  document.getElementById("news-detail-img").src = n.image;
   document.getElementById("news-detail-title").textContent = n.title;
   document.getElementById("news-detail-body").textContent = n.body;
+
+  // Pastikan TIDAK ADA lagi baris yang memanggil "news-detail-icon"
+  // atau "style.background" di sini!
+
   document.getElementById("news-overlay").classList.add("open");
   document.body.style.overflow = "hidden";
 }
@@ -94,3 +99,7 @@ window.addEventListener("scroll", () => {
       a.classList.toggle("active", href === "#" + found);
   });
 });
+
+function toggleMobileMenu() {
+  document.getElementById("nav-links").classList.toggle("show-menu");
+}
