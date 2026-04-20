@@ -54,11 +54,19 @@
 
     <!-- HERO — single static image from images/ folder -->
     <section class="hero">
-      <img
-        class="hero-img"
-        src="images/homepage_1.jpg"
-        alt="BRAND'S - Saatnya Balikin Lagi Fokusmu"
-      />
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset="images/homepage_mobile.jpg"
+        />
+
+        <img
+          class="hero-img"
+          src="images/homepage_1.jpg"
+          alt="BRAND'S - Saatnya Balikin Lagi Fokusmu"
+        />
+      </picture>
+
       <div class="hero-overlay">
         <div class="hero-text">
           <h1>SAATNYA<br />BALIKIN LAGI<br />FOKUSMU!</h1>

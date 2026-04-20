@@ -586,19 +586,19 @@ nav {
   display: flex;
 }
 .news-detail-box {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    max-width: 960px;
-    width: 95%; /* Sedikit diperlebar untuk layar sedang */
-    max-height: 85vh;
-    position: relative;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-    
-    display: flex;           /* Menggunakan Flexbox */
-    flex-direction: row;     /* Menyusun Kiri-Kanan */
-    align-items: stretch;    /* MEMAKSA elemen di dalamnya (gambar) mengisi tinggi yang sama */
-    padding: 0;              /* Memastikan kontainer utama tidak punya padding */
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 960px;
+  width: 95%; /* Sedikit diperlebar untuk layar sedang */
+  max-height: 85vh;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+
+  display: flex; /* Menggunakan Flexbox */
+  flex-direction: row; /* Menyusun Kiri-Kanan */
+  align-items: stretch; /* MEMAKSA elemen di dalamnya (gambar) mengisi tinggi yang sama */
+  padding: 0; /* Memastikan kontainer utama tidak punya padding */
 }
 .news-detail-hero-bg {
   width: 100%;
@@ -608,12 +608,12 @@ nav {
   justify-content: center;
 }
 .news-detail-content {
-    flex: 1;
-    padding: 48px;           /* Padding hanya untuk area teks */
-    overflow-y: auto;        /* Teks bisa di-scroll jika sangat panjang */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Teks berada di tengah secara vertikal jika pendek */
+  flex: 1;
+  padding: 48px; /* Padding hanya untuk area teks */
+  overflow-y: auto; /* Teks bisa di-scroll jika sangat panjang */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Teks berada di tengah secara vertikal jika pendek */
 }
 .news-detail-content h2 {
   font-family: "Montserrat", sans-serif;
@@ -713,26 +713,26 @@ footer span {
 
 /* Styling untuk gambar di halaman utama */
 .news-real-img {
-    width: 100%;
-    object-fit: cover; /* Memastikan gambar penuh tanpa menjadi leper */
-    display: block;
-    transition: transform 0.1s;
+  width: 100%;
+  object-fit: cover; /* Memastikan gambar penuh tanpa menjadi leper */
+  display: block;
+  transition: transform 0.1s;
 }
 
 /* Animasi hover */
 .news-row:hover .news-real-img {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .news-detail-hero-img {
-    width: 45%;              /* Lebar gambar tetap 45% */
-    height: auto;            /* Biarkan tinggi mengikuti kontainer */
-    min-height: 100%;        /* Memastikan gambar selalu setinggi kontainer */
-    object-fit: cover;       /* Memastikan gambar tidak gepeng */
-    display: block;
-    margin: 0;               /* Menghilangkan margin jika ada */
-    padding: 0;              /* Menghilangkan padding agar mentok */
-    scale: 112%;
+  width: 45%; /* Lebar gambar tetap 45% */
+  height: auto; /* Biarkan tinggi mengikuti kontainer */
+  min-height: 100%; /* Memastikan gambar selalu setinggi kontainer */
+  object-fit: cover; /* Memastikan gambar tidak gepeng */
+  display: block;
+  margin: 0; /* Menghilangkan margin jika ada */
+  padding: 0; /* Menghilangkan padding agar mentok */
+  scale: 112%;
 }
 
 @media (max-width: 768px) {
@@ -798,6 +798,10 @@ footer span {
   /* 3. Penyesuaian Elemen Lainnya Agar Rapi di HP */
   .hero-text h1 {
     font-size: 32px;
+    color: white;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 12px var(--green-dark);
   }
   .hero-overlay {
     align-items: center;
@@ -835,5 +839,21 @@ footer span {
   }
   .news-detail-content {
     padding: 32px 24px;
+  }
+  .hero {
+    /* Memastikan kontainer menjadi bingkai yang memotong gambar di luar batas */
+    overflow: hidden;
+  }
+
+  .hero-img {
+    /* Menempatkan gambar tepat di tengah (X=center, Y=center) */
+    object-position: center;
+
+    /* Memastikan gambar memenuhi area hero secara proporsional */
+    object-fit: cover;
+
+    /* Opsional: pastikan lebar tetap penuh */
+    width: 100%;
+    height: 100%;
   }
 }
